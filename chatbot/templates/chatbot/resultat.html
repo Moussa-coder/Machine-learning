@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Résultat de l'évaluation</h2>
+
+<div class="profil-risk {{ profil_risque }}">
+    <h3>Profil de risque : {{ profil_risque|upper }}</h3>
+</div>
+
+<div class="conseils">
+    <h4>Conseils personnalisés :</h4>
+    <ul>
+        {% for conseil in conseils %}
+        <li>{{ conseil }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<a href="{% url 'chatbot' %}">Nouvelle évaluation</a>
+{% endblock %}

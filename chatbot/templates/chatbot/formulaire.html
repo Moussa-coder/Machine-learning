@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Chatbot de suivi de grossesse</h2>
+<p>Répondez à ces questions pour évaluer votre profil de risque.</p>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Évaluer mon risque</button>
+</form>
+{% endblock %}
